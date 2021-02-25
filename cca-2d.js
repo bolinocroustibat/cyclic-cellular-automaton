@@ -5,7 +5,7 @@ function CCA2DcreateContext(settings) {
 	clearInterval(CCA2DrenderInterval);
 
 	let canvasEl = settings.canvasEl;
-	let numberOfColors = settings.cca2dColorCount;
+	let colorsCount = settings.cca2dColorsCount;
 	let threshold = settings.cca2dThreshold;
 	let resolution = settings.cca2dResolution;
 	let width = settings.width - (settings.width % resolution);
@@ -14,7 +14,7 @@ function CCA2DcreateContext(settings) {
 	let colsCount = width / resolution;
 
 	let state = [];
-	let colors = pickColors(numberOfColors);
+	let colors = pickColors(colorsCount);
 	let ctx = setupCanvas(canvasEl, width, height);
 
 	let context = {

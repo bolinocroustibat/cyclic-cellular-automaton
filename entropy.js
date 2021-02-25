@@ -1,27 +1,10 @@
 var entropyRenderInterval;
 
-function pickColors(numberOfColors) {
-
-	let minRandomColor = chroma.random();
-	let maxRandomColor = chroma.random();
-
-	let colors = chroma.scale([minRandomColor, maxRandomColor]).padding(0.05).colors(numberOfColors);
-
-	let rgbColorsWithId = [];
-	for (let i = 0; i < colors.length; i++) {
-		let rgbColor = chroma(colors[i]).rgb()
-		rgbColor.id = i
-		rgbColorsWithId.push(rgbColor);
-	}
-	return rgbColorsWithId;
-}
-
-
 function entropyCreateContext(options) {
 
 	clearInterval(entropyRenderInterval);
 
-	let colorsCount = options.entropyColorCount;
+	let colorsCount = options.entropyColorsCount;
 	let canvasEl = options.canvasEl;
 	let resolution = options.entropyResolution;
 	let width = options.width - (options.width % resolution);

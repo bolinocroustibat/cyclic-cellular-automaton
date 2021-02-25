@@ -51,14 +51,14 @@
 				}
 			);
 			pane.addSeparator();
-			const cca1dColorCountPane = pane.addInput(
-				{ cca1dColorCount: 4 },
-				'cca1dColorCount',
+			const cca1dColorsCountPane = pane.addInput(
+				{ cca1dColorsCount: 4 },
+				'cca1dColorsCount',
 				{ label: "Number of colors", min: 2, max: 5, step: 1 }
 			);
-			const cca2dColorCountPane = pane.addInput(
-				{ cca2dColorCount: 8 },
-				'cca2dColorCount',
+			const cca2dColorsCountPane = pane.addInput(
+				{ cca2dColorsCount: 8 },
+				'cca2dColorsCount',
 				{ label: "Number of colors", min: 2, max: 20, step: 1 }
 			);
 			const cca2dThresholdPane = pane.addInput(
@@ -71,9 +71,9 @@
 				'cca2dResolution',
 				{ label: "Resolution", min: 4, max: 10, step: 1 }
 			);
-			const entropyColorCountPane = pane.addInput(
-				{ entropyColorCount: 4 },
-				'entropyColorCount',
+			const entropyColorsCountPane = pane.addInput(
+				{ entropyColorsCount: 4 },
+				'entropyColorsCount',
 				{ label: "Number of colors", min: 2, max: 20, step: 1 }
 			);
 			const entropyResolutionPane = pane.addInput(
@@ -81,11 +81,11 @@
 				'entropyResolution',
 				{ label: "Resolution", min: 6, max: 10, step: 1 }
 			);
-			cca1dColorCountPane.hidden = true;
-			cca2dColorCountPane.hidden = false;
+			cca1dColorsCountPane.hidden = true;
+			cca2dColorsCountPane.hidden = false;
 			cca2dThresholdPane.hidden = false;
 			cca2dResolutionPane.hidden = false;
-			entropyColorCountPane.hidden = true;
+			entropyColorsCountPane.hidden = true;
 			entropyResolutionPane.hidden = true;
 			const resetBtn = pane.addButton({
 				title: 'Reset with those values',
@@ -101,29 +101,29 @@
 			artSelector.on('change', function (value) {
 
 				if (value == "1") {
-					cca1dColorCountPane.hidden = false;
-					cca2dColorCountPane.hidden = true;
+					cca1dColorsCountPane.hidden = false;
+					cca2dColorsCountPane.hidden = true;
 					cca2dThresholdPane.hidden = true;
 					cca2dResolutionPane.hidden = true;
-					entropyColorCountPane.hidden = true;
+					entropyColorsCountPane.hidden = true;
 					entropyResolutionPane.hidden = true;
 				}
 
 				else if (value == "2") {
-					cca1dColorCountPane.hidden = true;
-					cca2dColorCountPane.hidden = false;
+					cca1dColorsCountPane.hidden = true;
+					cca2dColorsCountPane.hidden = false;
 					cca2dThresholdPane.hidden = false;
 					cca2dResolutionPane.hidden = false;
-					entropyColorCountPane.hidden = true;
+					entropyColorsCountPane.hidden = true;
 					entropyResolutionPane.hidden = true;
 				}
 
 				else if (value == "E") {
-					cca1dColorCountPane.hidden = true;
-					cca2dColorCountPane.hidden = true;
+					cca1dColorsCountPane.hidden = true;
+					cca2dColorsCountPane.hidden = true;
 					cca2dThresholdPane.hidden = true;
 					cca2dResolutionPane.hidden = true;
-					entropyColorCountPane.hidden = false;
+					entropyColorsCountPane.hidden = false;
 					entropyResolutionPane.hidden = false;
 				}
 
