@@ -21,11 +21,12 @@
 
 	<script src="node_modules/tweakpane/dist/tweakpane.min.js"></script>
 	<script src="node_modules/chroma-js/chroma.min.js"></script>
+	<script src="node_modules/three/build/three.min.js"></script>
 	<script src="common.js"></script>
 	<script src="cca-1d.js"></script>
 	<script src="cca-2d.js"></script>
 	<script src="entropy.js"></script>
-	<script>
+	<script type="module">
 
 		var pane;
 		var settings;
@@ -44,8 +45,9 @@
 					label: "Algorithm",
 					options:
 					{
-						"1 dimension Cyclic Cellular Automaton": '1',
-						"2 dimensions Cyclic Cellular Automaton": '2',
+						"1 dimension Cyclic Cellular Automaton": "1",
+						"2 dimensions Cyclic Cellular Automaton": "2",
+						"3 dimensions Cylic Cellular Automaton": "3",
 						"2 dimensions Entropy Automaton": "E"
 					}
 				}
@@ -120,6 +122,15 @@
 					entropyResolutionPane.hidden = true;
 				}
 
+				else if (value == "3") {
+					cca1dColorsCountPane.hidden = true;
+					cca2dColorsCountPane.hidden = true;
+					cca2dThresholdPane.hidden = true;
+					cca2dResolutionPane.hidden = true;
+					entropyColorsCountPane.hidden = true;
+					entropyResolutionPane.hidden = true;
+				}
+
 				else if (value == "E") {
 					cca1dColorsCountPane.hidden = true;
 					cca2dColorsCountPane.hidden = true;
@@ -146,6 +157,18 @@
 				}
 				else if (settings.art == '2') {
 					CCA2Dstart(CCA2Dcontext, 400);
+				}
+				else if (settings.art = "3") {
+					// // Option 1: Import the entire three.js core library.
+					// import * as THREE from 'three';
+
+					// const scene = new THREE.Scene();
+
+
+					// // Option 2: Import just the parts you need.
+					// import { Scene } from 'three';
+
+					// const scene = new Scene();
 				}
 				else if (settings.art == 'E') {
 					entropyStart(entropyContext, 2500);
