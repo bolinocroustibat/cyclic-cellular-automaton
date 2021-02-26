@@ -1,6 +1,6 @@
 var entropyRenderInterval;
 
-function entropyCreateContext(options) {
+export function entropyCreateContext(options) {
 
 	clearInterval(entropyRenderInterval);
 
@@ -40,7 +40,7 @@ function entropyCreateContext(options) {
 	return context;
 }
 
-function entropyStart(context, maxIterations = 1000) {
+export function entropyStart(context, maxIterations = 1000) {
 	if (context) {
 		let i = 0;
 		entropyRenderInterval = setInterval(function () {

@@ -1,7 +1,7 @@
 {
   "name": "cyclic-cellular-automaton",
   "version": "1.0.0",
-  "description": "",
+  "description": "In JavaScript. Dependencies: chromas.js",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,7 @@
   "dependencies": {
     "chroma-js": "^2.1.0",
     "tweakpane": "^1.5.9"
-  }
+  },
+  "keywords": [],
+  "devDependencies": {}
 }

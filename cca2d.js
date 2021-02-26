@@ -1,6 +1,8 @@
+import { setupCanvas, nextCellColorId, pickColors } from "./common.js";
+
 var CCA2DrenderInterval;
 
-function CCA2DcreateContext(settings) {
+export function CCA2DcreateContext(settings) {
 
 	clearInterval(CCA2DrenderInterval);
 
@@ -47,7 +49,7 @@ function CCA2Drender(context) {
 	}
 }
 
-function CCA2Dstart(context, maxIterations = 1000) {
+export function CCA2Dstart(context, maxIterations = 1000) {
 	if (context) {
 		let i = 0;
 		CCA2DrenderInterval = setInterval(function () {

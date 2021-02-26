@@ -1,6 +1,8 @@
+import { setupCanvas, nextCellColorId, pickColors } from "./common.js";
+
 var CCA1DrenderInterval;
 
-function CCA1DcreateContext(options) {
+export function CCA1DcreateContext(options) {
 
 	clearInterval(CCA1DrenderInterval);
 
@@ -49,7 +51,7 @@ function CCA1Drender(line, context) {
 	}
 }
 
-function CCA1Dstart(context) {
+export function CCA1Dstart(context) {
 	let line = 0;
 	CCA1DrenderInterval = setInterval(function () {
 		if (++line === context.height) clearInterval(CCA1DrenderInterval);
