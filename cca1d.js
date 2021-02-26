@@ -1,6 +1,6 @@
 import { setupCanvas, nextCellColorId, pickColors } from "./common.js";
 
-var CCA1DrenderInterval;
+export var CCA1DrenderInterval;
 
 export function CCA1DcreateContext(options) {
 

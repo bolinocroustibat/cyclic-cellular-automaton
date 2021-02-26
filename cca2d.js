@@ -1,6 +1,6 @@
-import { setupCanvas, nextCellColorId, pickColors } from "./common.js";
+import { fillSquare, setupCanvas, nextCellColorId, pickColors } from "./common.js";
 
-var CCA2DrenderInterval;
+export var CCA2DrenderInterval;
 
 export function CCA2DcreateContext(settings) {
 

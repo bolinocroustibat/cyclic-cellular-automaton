@@ -1,4 +1,6 @@
-var entropyRenderInterval;
+import { fillSquare, setupCanvas, pickColors } from "./common.js";
+
+export var entropyRenderInterval;
 
 export function entropyCreateContext(options) {
 

@@ -1,7 +1,8 @@
-import { CCA1DcreateContext, CCA1Dstart } from "./cca1d.js";
-import { CCA2DcreateContext, CCA2Dstart } from "./cca2d.js";
-import { entropyCreateContext, entropyStart } from "./entropy.js";
-import Tweakpane from "./node_modules/tweakpane/dist/tweakpane.js";
+import { CCA1DcreateContext, CCA1Dstart, CCA1DrenderInterval } from "./cca1d.js";
+import { CCA2DcreateContext, CCA2Dstart, CCA2DrenderInterval } from "./cca2d.js";
+import { entropyCreateContext, entropyStart, entropyRenderInterval } from "./entropy.js";
+import Tweakpane from "tweakpane";
+
 
 var pane;
 var settings;
@@ -149,6 +150,6 @@ function resetContext() {
 	}
 }
 
-window.onresize = function() {
+window.onresize = function () {
 	resetContext();
 }

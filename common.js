@@ -1,4 +1,4 @@
-// import { chroma } from "./node_modules/chroma-js/chroma.js";
+import chroma from "chroma-js";
 
 export function setupCanvas(canvasEl, width, height) {
 	canvasEl.width = width;
@@ -22,21 +22,21 @@ export function nextCellColorId(cell, colors) {
 
 export function pickColors(numberOfColors) {
 
-	// let minRandomColor = chroma.random();
-	// let maxRandomColor = chroma.random();
+	let minRandomColor = chroma.random();
+	let maxRandomColor = chroma.random();
 
-	// let colors = chroma.scale([minRandomColor, maxRandomColor]).padding(0.05).colors(numberOfColors);
+	let colors = chroma.scale([minRandomColor, maxRandomColor]).padding(0.05).colors(numberOfColors);
 
 	let rgbColorsWithId = [];
-	// for (let i = 0; i < colors.length; i++) {
-	// 	let rgbColor = chroma(colors[i]).rgb()
-	// 	rgbColor.id = i
-	// 	rgbColorsWithId.push(rgbColor);
-	// }
+	for (let i = 0; i < colors.length; i++) {
+		let rgbColor = chroma(colors[i]).rgb()
+		rgbColor.id = i
+		rgbColorsWithId.push(rgbColor);
+	}
 	return rgbColorsWithId;
 }
 
-function fillSquare(ctx, colorRgb, x, y, resolution) {
+export function fillSquare(ctx, colorRgb, x, y, resolution) {
 	ctx.fillStyle = "rgb(" + colorRgb[0] + "," + colorRgb[1] + "," + colorRgb[2] + ")";
 	ctx.fillRect(x, y, resolution, resolution);
 }
