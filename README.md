@@ -1,7 +1,7 @@
 # Generative Visual Art algorithms
 
 In JavaScript.
-Dependencies: chromas.js
+Dependencies: chromas.js, tweakpane
 
 ## Cyclic Cellular automaton
 See https://en.wikipedia.org/wiki/Cyclic_cellular_automaton
