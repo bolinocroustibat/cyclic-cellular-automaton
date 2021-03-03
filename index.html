@@ -30,23 +30,36 @@
 			start();
 		}
 
-		window.onresize = function() {
+		window.onresize = function () {
 			start();
 		}
 
 		function start() {
 			clearInterval(CCA2DrenderInterval);
+			let settingsPossibilities = [
+				{ "cca2dColorsCount": 20, "cca2dThreshold": 1 },
+				{ "cca2dColorsCount": 4, "cca2dThreshold": 2 },
+				{ "cca2dColorsCount": 6, "cca2dThreshold": 2 },
+				{ "cca2dColorsCount": 8, "cca2dThreshold": 2 },
+				{ "cca2dColorsCount": 9, "cca2dThreshold": 2 },
+				{ "cca2dColorsCount": 9, "cca2dThreshold": 2 },
+				{ "cca2dColorsCount": 3, "cca2dThreshold": 3 },
+				{ "cca2dColorsCount": 4, "cca2dThreshold": 3 },
+				{ "cca2dColorsCount": 5, "cca2dThreshold": 3 },
+				{ "cca2dColorsCount": 3, "cca2dThreshold": 4 }
+			]
+			let chosenSetting = settingsPossibilities[Math.floor(Math.random() * settingsPossibilities.length)];
 			settings = {
 				canvasEl: document.getElementById('canvas'),
-				cca2dColorsCount: 8,
-				cca2dThreshold: 2,
-				cca2dResolution: 6,
+				cca2dColorsCount: chosenSetting.cca2dColorsCount,
+				cca2dThreshold: chosenSetting.cca2dThreshold,
+				cca2dResolution: 5,
 				width: window.innerWidth,
 				height: window.innerHeight,
 			}
 			CCA2Dcontext = CCA2DcreateContext(settings);
-			CCA2Dstart(CCA2Dcontext, 400);
-			setTimeout(start, 2000);
+			CCA2Dstart(CCA2Dcontext, 1000);
+			setTimeout(start, 30000);
 		}
 
 	</script>
